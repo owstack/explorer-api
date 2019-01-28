@@ -1,0 +1,44 @@
+{
+  "name": "@owstack/explorer-api",
+  "version": "1.0.0",
+  "description": "OWS Explorer API",
+  "main": "index.js",
+  "dependencies": {
+    "@owstack/hapi-blockchain": "^1.0.9",
+    "@owstack/hapi-swagger": "^9.0.2",
+    "@owstack/message-lib": "0.0.3",
+    "@owstack/mining-pool-meta": "^1.0.0",
+    "@owstack/ows-common": "0.0.16",
+    "hapi": "^17.8.1",
+    "inert": "^5.1.2",
+    "joi": "^13.7.0",
+    "lru-cache": "^5.1.1",
+    "nconf": "^0.10.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
+    "socket.io": "^2.2.0",
+    "vision": "^5.4.4",
+    "zeromq": "^5.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.3",
+    "documentation": "^6.3.3",
+    "eslint": "^4.19.1",
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^5.2.0",
+    "mocha-jenkins-reporter": "^0.4.1",
+    "proxyquire": "^2.1.0",
+    "should": "^13.2.3",
+    "sinon": "^7.2.5",
+    "supertest": "^3.4.2",
+    "urlencode": "^1.1.0"
+  },
+  "scripts": {
+    "test": "mocha --no-timeouts",
+    "lint": "eslint .",
+    "coverage": "istanbul cover _mocha -- --no-timeouts"
+  },
+  "author": "Ian Patton <ian@owstack.org>",
+  "license": "MIT"
+}
