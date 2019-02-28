@@ -14,7 +14,8 @@ const defaultConf = {
     currency,
     connect: {
         nodes: []
-    }
+    },
+    proxyPath: process.env.PROXY_PATH
 };
 
 if (process.env.NCONF_PATH) {
