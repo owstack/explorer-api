@@ -184,7 +184,7 @@ const blockIndex = async function (req, h) {
 };
 
 const list = async function (req, h) {
-    const BLOCK_LIMIT = 200;
+    const DEFAULT_BLOCK_LIMIT = 20;
 
     let dateStr;
     const todayStr = _formatTimestamp(new Date());
@@ -209,7 +209,7 @@ const list = async function (req, h) {
     const lte = parseInt(req.query.startTimestamp) || gte + 86400;
     const prev = _formatTimestamp(new Date((gte - 86400) * 1000));
     const next = lte ? _formatTimestamp(new Date(lte * 1000)) : null;
-    const limit = parseInt(req.query.limit || BLOCK_LIMIT);
+    const limit = parseInt(req.query.limit || DEFAULT_BLOCK_LIMIT);
     let more = false;
     const moreTimestamp = lte;
 
