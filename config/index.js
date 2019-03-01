@@ -28,7 +28,7 @@ if (process.env.NCONF_PATH) {
             zmqpubhashblock: `tcp://${baseHostname}-${i}.${baseHostname}:28332`,
             rpcprotocol: 'http',
             rpchost: `${baseHostname}-${i}.${baseHostname}`,
-            rpcport: 8332,
+            rpcport: Number(process.env.RPCPORT) || 8332,
             rpcuser: process.env.RPCUSERNAME || '',
             rpcpassword: process.env.RPCPASSWORD || ''
         });
