@@ -26,11 +26,11 @@ if (process.env.NCONF_PATH) {
         defaultConf.connect.nodes.push({
             zmqpubrawtx: `tcp://${baseHostname}-${i}:28332`,
             zmqpubhashblock: `tcp://${baseHostname}-${i}:28332`,
-            protocol: 'http',
-            host: `${baseHostname}-${i}`,
-            port: 8332,
-            user: process.env.RPCUSERNAME || '',
-            password: process.env.RPCPASSWORD || ''
+            rpcprotocol: 'http',
+            rpchost: `${baseHostname}-${i}`,
+            rpcport: 8332,
+            rpcuser: process.env.RPCUSERNAME || '',
+            rpcpassword: process.env.RPCPASSWORD || ''
         });
     }
     if (!process.env.RPCUSERNAME || !process.env.RPCPASSWORD) {
