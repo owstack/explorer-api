@@ -24,10 +24,10 @@ if (process.env.NCONF_PATH) {
 } else {
     for (let i = 0; i < numHosts; i++) {
         defaultConf.connect.nodes.push({
-            zmqpubrawtx: `tcp://${baseHostname}-${i}:28332`,
-            zmqpubhashblock: `tcp://${baseHostname}-${i}:28332`,
+            zmqpubrawtx: `tcp://${baseHostname}-${i}.${baseHostname}:28332`,
+            zmqpubhashblock: `tcp://${baseHostname}-${i}.${baseHostname}:28332`,
             rpcprotocol: 'http',
-            rpchost: `${baseHostname}-${i}`,
+            rpchost: `${baseHostname}-${i}.${baseHostname}`,
             rpcport: 8332,
             rpcuser: process.env.RPCUSERNAME || '',
             rpcpassword: process.env.RPCPASSWORD || ''
