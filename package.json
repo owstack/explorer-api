@@ -1,10 +1,10 @@
 {
   "name": "@owstack/explorer-api",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "OWS Explorer API",
   "main": "index.js",
   "dependencies": {
-    "@owstack/hapi-blockchain": "^1.0.12",
+    "@owstack/hapi-blockchain": "^1.0.13",
     "@owstack/hapi-swagger": "^9.0.2",
     "@owstack/message-lib": "0.0.3",
     "@owstack/mining-pool-meta": "^1.0.0",
