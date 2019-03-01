@@ -46,7 +46,7 @@ const _getInfo = async function (req) {
         errors: result.errors,
         network: result.network,
         description: {
-            name: req.server.app.blockchain.coinLib.Networks.defaultNetwork.chainName,
+            name: req.server.app.blockchain.coinLib.Networks.defaultNetwork.description,
             protocol: req.server.app.blockchain.coinLib.URI.getProtocol()
         },
         units: _.concat(req.server.app.blockchain.coinLib.Unit.getUnits(), currency._getUnits(req)),
