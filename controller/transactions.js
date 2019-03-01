@@ -1,6 +1,3 @@
-const conf = require('../config');
-const config = conf.get();
-
 const owsCommon = require('@owstack/ows-common');
 const _ = owsCommon.deps.lodash;
 const common = require('./common');
@@ -123,7 +120,13 @@ const _transformOutput = function (req, options, output, index) {
 
     if (output.address) {
         transformed.scriptPubKey.addresses = [output.address];
-        const address = req.server.app.blockchain.coinLib.Address(output.address); //TODO return type from btc-node
+        let address;
+        try {
+            address = req.server.app.blockchain.coinLib.Address(output.address); //TODO return type from btc-node
+        } catch (e) {
+            console.error(`Could not parse address ${output.address}`);
+            throw e;
+        }
         transformed.scriptPubKey.type = address.type;
     }
     return transformed;
