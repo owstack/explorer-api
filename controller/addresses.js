@@ -209,7 +209,7 @@ const multiutxo = async function (req, h) {
 
     let utxos;
     try {
-        utxos = await req.server.app.blockchain.getAddressUnspentOutputs(addresses, {});
+        utxos = await req.server.app.blockchain.getAddressUnspentOutputs(addresses.split(','), {});
     } catch (e) {
         if (e.code === -5) {
             return h.response([]).code(200);
