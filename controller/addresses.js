@@ -58,13 +58,13 @@ const _getAddressSummary = async function (req, address, options = {}) {
 
     const transformed = {
         addrStr: address,
-        balance: req.server.app.blockchain.coinLib.Unit.fromAtomicUnit(summary.balance).toBTC(),
+        balance: req.server.app.blockchain.coinLib.Unit.fromAtomicUnit(summary.balance).toStandardUnit(),
         balanceSat: summary.balance,
-        totalReceived: req.server.app.blockchain.coinLib.Unit.fromAtomicUnit(summary.totalReceived).toBTC(),
+        totalReceived: req.server.app.blockchain.coinLib.Unit.fromAtomicUnit(summary.totalReceived).toStandardUnit(),
         totalReceivedSat: summary.totalReceived,
-        totalSent: req.server.app.blockchain.coinLib.Unit.fromAtomicUnit(summary.totalSpent).toBTC(),
+        totalSent: req.server.app.blockchain.coinLib.Unit.fromAtomicUnit(summary.totalSpent).toStandardUnit(),
         totalSentSat: summary.totalSpent,
-        unconfirmedBalance: req.server.app.blockchain.coinLib.Unit.fromAtomicUnit(summary.unconfirmedBalance).toBTC(),
+        unconfirmedBalance: req.server.app.blockchain.coinLib.Unit.fromAtomicUnit(summary.unconfirmedBalance).toStandardUnit(),
         unconfirmedBalanceSat: summary.unconfirmedBalance,
         unconfirmedTxApperances: summary.unconfirmedAppearances, // misspelling - ew
         txApperances: summary.appearances, // yuck
