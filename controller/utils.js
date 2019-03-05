@@ -16,14 +16,14 @@ const estimateFee = async function (req, h) {
                 fees.push([num, fee]);
             } else {
                 fee = await req.server.app.blockchain.estimateSmartFee(num);
-                fees.push([num, fee.feerate]);
+                fees.push([num, fee.feeratey]);
             }
         } catch (e) {
             return common.handleErrors(req, h, e);
         }
     }
 
-    return h.response(_).code(200);
+    return h.response(_.fromPairs(fees)).code(200);
 };
 
 module.exports = {
