@@ -16,7 +16,7 @@ const estimateFee = async function (req, h) {
                 fees.push([num, fee]);
             } else {
                 fee = await req.server.app.blockchain.estimateSmartFee(num);
-                fees.push([num, fee.feeratey]);
+                fees.push([num, fee.feerate]);
             }
         } catch (e) {
             return common.handleErrors(req, h, e);
