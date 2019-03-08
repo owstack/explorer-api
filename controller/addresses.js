@@ -244,7 +244,7 @@ const multitxs = async function (req, h) {
     let addressHistory;
     let transforedAddressHistory;
     try {
-        addressHistory = await req.server.app.blockchain.getAddressHistory(addresses, options);
+        addressHistory = await req.server.app.blockchain.getAddressHistory(addresses.split(','), options);
         const transformOptions = _getTransformOptions(req);
         transforedAddressHistory = await _transformAddressHistoryForMultiTxs(req, addressHistory.items, transformOptions);
     } catch (e) {

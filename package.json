@@ -1,6 +1,6 @@
 {
   "name": "@owstack/explorer-api",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "description": "OWS Explorer API",
   "main": "index.js",
   "dependencies": {
