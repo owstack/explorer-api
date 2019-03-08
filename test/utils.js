@@ -7,8 +7,8 @@ describe('Utils', function () {
     describe('/utils/estimatefee', function () {
         before(function () {
             sinon.stub(Blockchain.prototype, 'estimateSmartFee')
-                .onFirstCall().resolves(1000 / 1e8)
-                .onSecondCall().resolves(3000 / 1e8);
+                .onFirstCall().resolves({feerate: 1000 / 1e8})
+                .onSecondCall().resolves({feerate: 3000 / 1e8});
         });
 
         after(function () {
